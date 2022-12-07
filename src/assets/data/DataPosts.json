@@ -1,0 +1,65 @@
+{
+    "postEdit":{},
+    "posts": [
+        {
+            "postId": "1",
+            "postTitle": "Setup Triple R (React + Redux + Router)",
+            "postTags": "react, redux, react router",
+            "postType":"1",
+            "postImage": "https://i.postimg.cc/26pjLZLd/trippleR.png",
+            "postDate": "12/5/2022",
+            "postContent":"",
+            "postDescription": "Quick setup ReactJS + Redux toolkit + React router with logical directory structure."
+        },
+        {
+            "postId": "2",
+            "postTitle": "Create Arrow Button Back To Top",
+            "postTags": "react, utilities",
+            "postType":"2",
+            "postImage": "https://i.postimg.cc/mk1nqB3T/backTop.png",
+            "postDate": "12/5/2022",
+            "postContent":"",
+            "postDescription": "Create modern back to top button without libary"
+        },
+        {
+            "postId": "3",
+            "postTitle": "Create Popup Modal",
+            "postTags": "react, redux, utilities",
+            "postType":"2",
+            "postImage": "https://i.postimg.cc/sDk3yPc4/modal-Popup.png",
+            "postDate": "12/5/2022",
+            "postContent":"",
+            "postDescription": "Create modern popup modal can call anywhere with css and redux"
+        },
+        {
+            "postId": "4",
+            "postTitle": "Usefull Hook from Redux",
+            "postTags": "react, redux",
+            "postType":"1",
+            "postImage": "https://i.postimg.cc/02RH1my7/hooks-Redux.png",
+            "postDate": "12/5/2022",
+            "postContent":"",
+            "postDescription": "Discover popular convenient data hooks from Redux such as useSelector and useDispatch"
+        },
+        {
+            "postId": "5",
+            "postTitle": "Usefull Hook from React Router",
+            "postTags": "react, react router",
+            "postType":"1",
+            "postImage": "https://i.postimg.cc/qMnwRnnG/reactrouter6.png",
+            "postDate": "12/5/2022",
+            "postContent":"",
+            "postDescription": "Discover popular convenient hooks from React Router such as useLocation, useParam, useNavigator"
+        },
+        {
+            "postId": "6",
+            "postTitle": "Setup multiple languages with i18next",
+            "postTags": "react, i18next, utilities",
+            "postType":"2",
+            "postImage": "https://i.postimg.cc/NFKm2yMY/i18next.png",
+            "postDate": "12/5/2022",
+            "postContent":"",
+            "postDescription": "Make the website can display text in many different languages with i18next."
+        }
+    ]
+}

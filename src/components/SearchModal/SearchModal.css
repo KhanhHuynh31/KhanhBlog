@@ -1,0 +1,35 @@
+#popup__search .modal__content {
+    margin-top: 30px;
+    display: block;
+    position: relative;
+
+}
+#popup__search .modal__popup{
+
+    max-width: 400px;
+
+}
+#popup__search .search__input {
+    width: 100%;
+
+}
+
+#popup__search .modal__close {
+    top: 0px;
+    right: 15px;
+
+}
+
+.modal__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #646eff;
+}
+
+.search__modal {
+    display: flex;
+    align-items: flex-end;
+}

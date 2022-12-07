@@ -1,0 +1,57 @@
+.list__title {
+    padding: 12px;
+}
+
+.table__template {
+    border-collapse: collapse;
+    
+}
+
+.table__template th {
+    border-collapse: collapse;
+    font-size: 18px;
+    color: #fff;
+    background-color: #6c7ae0;
+    padding: 10px;
+    white-space: nowrap;
+    position: sticky; 
+    top: 0
+}
+
+.table__posts {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e5e7ea;
+    box-shadow: 0 0 40px 0 rgb(0 0 0 / 15%);
+    margin: 10px;
+    height: 660px;
+    overflow: scroll;
+
+
+}
+
+.table__template tr:nth-child(even) {
+
+    background-color: #f8f6ff;
+}
+
+.table__template tr {
+    color: #625f6e;
+    transition: 0.2s;
+    
+}
+
+.table__template tr:hover {
+    color: #6c7ae0;
+    background-color: #e5e7ea;
+}
+
+.table__template td {
+    padding: 20px;
+
+}
+
+.button__action {
+    font-size: 20px;
+    cursor: pointer;
+}
