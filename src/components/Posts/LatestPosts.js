@@ -22,7 +22,7 @@ export default function LatestPosts() {
         })
     }
     const renderPost = () => {
-        return postListData.filter(item => item.postId === id.toString()).map((item, index) => {
+        return postListData.filter(item => item.postId.toString() === id.toString()).map((item, index) => {
             return <div className='posts__latest' key={index}>
                 <div className='latest__picture'>
                     {isHome && <div className='posts__title'>{t('lastest posts')}</div>}

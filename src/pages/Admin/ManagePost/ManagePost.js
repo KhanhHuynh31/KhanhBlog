@@ -50,7 +50,6 @@ export default function ManagePost() {
       dispatch(UpdatePostAction(dataEdit));
     } else {
       let maxValueOfY = Math.max(...postListData.map(o => o.postId), 0);
-      alert(maxValueOfY)
       let dataPost = {
         ...data,
         postContent: editorText,
