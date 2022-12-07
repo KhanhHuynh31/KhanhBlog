@@ -25,7 +25,6 @@ export default function ManagePost() {
   let { id } = useParams();
   const [editorText, setEditorText] = useState(postEditData.postContent);
   const postListData = useSelector(state => state.PostReducer.posts);
-  let maxValueOfY = Math.max(...postListData.map(o => o.postId), 0);
 
   const editorRef = useRef(useState(postEditData.postContent));
   const log = () => {
@@ -50,11 +49,13 @@ export default function ManagePost() {
       }
       dispatch(UpdatePostAction(dataEdit));
     } else {
+      let maxValueOfY = Math.max(...postListData.map(o => o.postId), 0);
+      alert(maxValueOfY)
       let dataPost = {
         ...data,
         postContent: editorText,
         postDate: date,
-        postId: maxValueOfY++
+        postId: maxValueOfY + 1
 
       }
       dispatch(AddPostAction(dataPost));
@@ -75,7 +76,7 @@ export default function ManagePost() {
             </div>
             <div className='post__item'>
               <p>
-              {t("post description")}
+                {t("post description")}
                 {errors.postDescription && <span className='alert__item'> {errors.postDescription.message}</span>}
               </p>
               <textarea type="text" className="desc__input" defaultValue={postEditData.postDescription} {...register("postDescription")}></textarea>
@@ -84,21 +85,21 @@ export default function ManagePost() {
           <div className='item__right'>
             <div className='post__item'>
               <p>
-              {t("post category")}
+                {t("post category")}
                 {errors.postType && <span className='alert__item'> {errors.postType.message}</span>}
               </p>
               <input type="text" defaultValue={postEditData.postType} {...register("postType")}></input>
             </div>
             <div className='post__item'>
               <p>
-              {t("post tag")}
+                {t("post tag")}
                 {errors.postTags && <span className='alert__item'> {errors.postTags.message}</span>}
               </p>
               <input type="text" placeholder={t("tag 1, tag 2, ...")} defaultValue={postEditData.postTags} {...register("postTags")}></input>
             </div>
             <div className='post__item'>
               <p>
-              {t("post image")}
+                {t("post image")}
                 {errors.postImage && <span className='alert__item'> {errors.postImage.message}</span>}
               </p>
               <input type="text" placeholder={t("image url: https://image.png")} defaultValue={postEditData.postImage} {...register("postImage")}></input>
@@ -106,7 +107,7 @@ export default function ManagePost() {
           </div>
           <div className='post__item main__input'>
             <p>
-            {t("post content")}
+              {t("post content")}
             </p>
             <Editor
               apiKey='qqcfb0qid0ghvvpl2t7ya6zeljdcmk0imjd2xxnnnawodpnn'
