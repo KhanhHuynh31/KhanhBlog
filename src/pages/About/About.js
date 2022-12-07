@@ -55,7 +55,7 @@ export default function About() {
                         </a>
                     </div>
                     <div className='about__item'>
-                        <a href='https://ckeditor.com/' target="_blank" rel="noopener noreferrer">
+                        <a href='https://www.tiny.cloud/' target="_blank" rel="noopener noreferrer">
                             <div className='item__box'>
                                 <img alt="khanh's blog" src={tinyMCEPicture}></img>
                                 <p>TinyMCE 6.0.0</p>
