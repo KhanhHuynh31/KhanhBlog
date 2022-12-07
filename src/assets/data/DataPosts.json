@@ -33,7 +33,7 @@
         },
         {
             "postId": "4",
-            "postTitle": "Usefull Hook from Redux",
+            "postTitle": "Dispatch and Seletor data with Redux",
             "postTags": "react, redux",
             "postType":"1",
             "postImage": "https://i.postimg.cc/02RH1my7/hooks-Redux.png",
