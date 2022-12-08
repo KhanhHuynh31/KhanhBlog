@@ -49,7 +49,8 @@ export default function ManagePost() {
       setEditorError("*required field")
     }
     else {
-      setEditorError("")
+      setEditorError("");
+      console.log(editorText);
       if (id !== undefined) {
         let dataEdit = {
           ...data,
