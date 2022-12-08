@@ -30,16 +30,6 @@ export default function ManagePost() {
       setEditorText(editorRef.current.getContent());
     }
   };
-  const getType = (value) => {
-    switch (parseInt(value, 10)) {
-      case 1:
-        return "React JS"
-      case 2:
-        return "Utility"
-      default:
-        return "Other"
-    }
-  };
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
@@ -100,8 +90,7 @@ export default function ManagePost() {
                 {t("post category")}
                 {errors.postType && <span className='alert__item'> *required field</span>}
               </p>
-              <select className="post__category"{...register("postType")} >
-                <option value={postEditData.postType} selected="selected" hidden="hidden">{getType(postEditData.postType)}</option>
+              <select className="post__category" defaultValue={postEditData.postType} {...register("postType")} >
                 <option value="1">React JS</option>
                 <option value="2">Utility</option>
                 <option value="3">Other</option>

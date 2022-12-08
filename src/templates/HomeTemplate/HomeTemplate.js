@@ -6,9 +6,7 @@ import Login from '../../pages/Home/Account/Login'
 import Footer from './Layout/Footer/Footer'
 import Header from './Layout/Header/Header'
 
-
 export default function HomeTemplate() {
-
     return (
         <Fragment>
             <Login />

@@ -31,3 +31,10 @@ button, input[type="submit"], input[type="reset"] {
 	cursor: pointer;
 	outline: inherit;
 }
+strong{
+  font-weight: bold;
+  font-family: "Nunito Bold";
+}
+code{
+  background-color: #e8e8e8;
+}
