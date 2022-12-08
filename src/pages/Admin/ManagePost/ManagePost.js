@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react'
 import "./ManagePost.css"
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { AddPostAction, UpdatePostAction } from '../../../redux/actions/PostAction';
@@ -15,49 +14,62 @@ const schema = yup.object({
   postDescription: yup.string().required(),
   postType: yup.string().required(),
   postTags: yup.string().required(),
-  postImage: yup.string().required()
+  postImage: yup.string().required(),
 }).required();
 export default function ManagePost() {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
   const postEditData = useSelector(state => state.PostReducer.postEdit);
   let { id } = useParams();
   const [editorText, setEditorText] = useState(postEditData.postContent);
+  const [editorError, setEditorError] = useState();
   const postListData = useSelector(state => state.PostReducer.posts);
-
   const editorRef = useRef(useState(postEditData.postContent));
   const log = () => {
     if (editorRef.current) {
       setEditorText(editorRef.current.getContent());
     }
   };
-
-
+  const getType = (value) => {
+    switch (parseInt(value, 10)) {
+      case 1:
+        return "React JS"
+      case 2:
+        return "Utility"
+      default:
+        return "Other"
+    }
+  };
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
   const onSubmit = (data) => {
     const date = new Date().toLocaleString();
-    if (id !== undefined) {
-      let dataEdit = {
-        ...data,
-        postContent: editorText,
-        postDate: date,
-        postId: id
+    if (editorText === '' || editorText === undefined) {
+      setEditorError("*required field")
+    }
+    else {
+      setEditorError("")
+      if (id !== undefined) {
+        let dataEdit = {
+          ...data,
+          postContent: editorText,
+          postDate: date,
+          postId: id
 
-      }
-      dispatch(UpdatePostAction(dataEdit));
-    } else {
-      let maxValueOfY = Math.max(...postListData.map(o => o.postId), 0);
-      let dataPost = {
-        ...data,
-        postContent: editorText,
-        postDate: date,
-        postId: maxValueOfY + 1
+        }
+        dispatch(UpdatePostAction(dataEdit));
+      } else {
+        let maxValueOfY = Math.max(...postListData.map(o => o.postId), 0);
+        let dataPost = {
+          ...data,
+          postContent: editorText,
+          postDate: date,
+          postId: maxValueOfY + 1
 
+        }
+        dispatch(AddPostAction(dataPost));
       }
-      dispatch(AddPostAction(dataPost));
     }
   };
 
@@ -69,14 +81,14 @@ export default function ManagePost() {
             <div className='post__item'>
               <p>
                 {t("post title")}
-                {errors.postTitle && <span className='alert__item'> {errors.postTitle.message}</span>}
+                {errors.postTitle && <span className='alert__item'> *required field</span>}
               </p>
               <input type="text" defaultValue={postEditData.postTitle} {...register("postTitle")} ></input>
             </div>
             <div className='post__item'>
               <p>
                 {t("post description")}
-                {errors.postDescription && <span className='alert__item'> {errors.postDescription.message}</span>}
+                {errors.postDescription && <span className='alert__item'> *required field</span>}
               </p>
               <textarea type="text" className="desc__input" defaultValue={postEditData.postDescription} {...register("postDescription")}></textarea>
             </div>
@@ -85,28 +97,33 @@ export default function ManagePost() {
             <div className='post__item'>
               <p>
                 {t("post category")}
-                {errors.postType && <span className='alert__item'> {errors.postType.message}</span>}
+                {errors.postType && <span className='alert__item'> *required field</span>}
               </p>
-              <input type="text" defaultValue={postEditData.postType} {...register("postType")}></input>
+              <select className="post__category"{...register("postType")} >
+                <option value={postEditData.postType} selected="selected" hidden="hidden">{getType(postEditData.postType)}</option>
+                <option value="1">React JS</option>
+                <option value="2">Utility</option>
+                <option value="3">Other</option>
+              </select>
             </div>
             <div className='post__item'>
               <p>
                 {t("post tag")}
-                {errors.postTags && <span className='alert__item'> {errors.postTags.message}</span>}
+                {errors.postTags && <span className='alert__item'> *required field</span>}
               </p>
               <input type="text" placeholder={t("tag 1, tag 2, ...")} defaultValue={postEditData.postTags} {...register("postTags")}></input>
             </div>
             <div className='post__item'>
               <p>
                 {t("post image")}
-                {errors.postImage && <span className='alert__item'> {errors.postImage.message}</span>}
+                {errors.postImage && <span className='alert__item'> *required field</span>}
               </p>
               <input type="text" placeholder={t("image url: https://image.png")} defaultValue={postEditData.postImage} {...register("postImage")}></input>
             </div>
           </div>
           <div className='post__item main__input'>
             <p>
-              {t("post content")}
+              {t("post content")}<span className='alert__item'> {editorError}</span>
             </p>
             <Editor
               apiKey='qqcfb0qid0ghvvpl2t7ya6zeljdcmk0imjd2xxnnnawodpnn'

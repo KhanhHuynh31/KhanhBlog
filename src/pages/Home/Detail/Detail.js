@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import "./Detail.css"
 import { useParams, useLocation } from 'react-router-dom';
-import LatestPosts from '../../components/Posts/LatestPosts';
+import LatestPosts from '../../../components/Posts/LatestPosts';
 import { useSelector } from 'react-redux';
 import parse from 'html-react-parser';
 

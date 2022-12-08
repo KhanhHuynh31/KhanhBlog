@@ -1,14 +1,14 @@
 import React from 'react'
 import "./About.css"
-import reactjsPicture from '../../assets/images/libary/react.png';
-import i18Picture from '../../assets/images/libary/i18next.png';
-import reduxPicture from '../../assets/images/libary/redux.png';
-import routerPicture from '../../assets/images/libary/router.png';
+import reactjsPicture from '../../../assets/images/libary/react.png';
+import i18Picture from '../../../assets/images/libary/i18next.png';
+import reduxPicture from '../../../assets/images/libary/redux.png';
+import routerPicture from '../../../assets/images/libary/router.png';
 
-import tinyMCEPicture from '../../assets/images/libary/tinyMCE.png';
-import yupPicture from '../../assets/images/libary/yup.png';
-import reacthookformPicture from '../../assets/images/libary/reacthookform.png';
-import reacthottoast from '../../assets/images/libary/reacthottoast.png';
+import tinyMCEPicture from '../../../assets/images/libary/tinyMCE.png';
+import yupPicture from '../../../assets/images/libary/yup.png';
+import reacthookformPicture from '../../../assets/images/libary/reacthookform.png';
+import reacthottoast from '../../../assets/images/libary/reacthottoast.png';
 
 export default function About() {
     return (

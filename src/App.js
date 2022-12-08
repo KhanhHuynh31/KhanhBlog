@@ -9,16 +9,16 @@ import "./assets/fonts/static/Nunito-Regular.ttf"
 import "./assets/fonts/static/Nunito-SemiBold.ttf"
 import "./assets/fonts/static/Nunito-Black.ttf"
 import Home from './pages/Home/Home';
-import Detail from './pages/Detail/Detail';
+import Detail from './pages/Home/Detail/Detail';
 import PageNotFound from './pages/PageNotFound';
 import HomeTemplate from './templates/HomeTemplate/HomeTemplate';
-import Category from './pages/Category/Category';
+import Category from './pages/Home/Category/Category';
 import AdminTemplate from './templates/AdminTemplate/AdminTemplate';
 import ManagePost from './pages/Admin/ManagePost/ManagePost';
 import ListPost from './pages/Admin/ListPost/ListPost';
 import { Toaster } from 'react-hot-toast';
-import Search from './pages/Search/Search';
-import About from './pages/About/About';
+import Search from './pages/Home/Search/Search';
+import About from './pages/Home/About/About';
 
 function App() {
   return (

@@ -41,17 +41,8 @@
     background-color: #eef0f0;
 }
 
-.category__number {
-    float: right;
-    font-size: 14px;
-    background-color: #eef0f0;
-    padding: 3px;
-    margin-right: 5px;
+.category__active {
     color: #646eff;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    border-radius: 50%;
 }
 
 .category__header {
@@ -61,7 +52,7 @@
     z-index: -1;
     top: 80px;
     left: 0;
-    background-image: url("../../assets/images/background.gif");
+    background-image: url("../../../assets/images/background.gif");
     text-align: center;
 }
 
@@ -149,10 +140,12 @@
 
         padding-top: 0;
     }
+
     .content__order {
         padding: 0 30px;
-    
+
     }
+
     .content__main hr {
         margin: 0 30px 20px;
     }
@@ -168,10 +161,12 @@
         top: 70px;
 
     }
+
     .content__order {
         padding: 0 20px;
-    
+
     }
+
     .content__main hr {
         margin: 0 20px 20px;
     }

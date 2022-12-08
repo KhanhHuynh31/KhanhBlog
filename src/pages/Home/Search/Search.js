@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import PostsItem from '../../components/Posts/PostsItem'
-import { SearchModalAction } from '../../redux/actions/ModalAction';
+import PostsItem from '../../../components/Posts/PostsItem'
+import { SearchModalAction } from '../../../redux/actions/ModalAction';
 import "./Search.css"
 
 export default function Search() {

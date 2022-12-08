@@ -1,7 +1,7 @@
 import React from 'react'
-import PostsItem from '../../components/Posts/PostsItem'
+import PostsItem from '../../../components/Posts/PostsItem'
 import "./Category.css"
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Category() {
 
@@ -34,9 +34,9 @@ export default function Category() {
                     <div className='category__item'>
                         <h3>Categories</h3>
                         <ul>
-                            <li><Link to={"/category/1"}>React Basic</Link></li>
-                            <li><Link to={"/category/2"}>Utilities</Link></li>
-
+                            <li><NavLink to="/category/1" className={({ isActive }) => "category__link" + (isActive ? " category__active" : "")}>React JS</NavLink></li>
+                            <li><NavLink to="/category/2" className={({ isActive }) => "category__link" + (isActive ? " category__active" : "")}>Utility</NavLink></li>
+                            <li><NavLink to="/category/3" className={({ isActive }) => "category__link" + (isActive ? " category__active" : "")}>Other</NavLink></li>
                         </ul>
                     </div>
                 </div>

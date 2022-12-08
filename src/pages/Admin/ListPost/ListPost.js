@@ -9,16 +9,25 @@ import { useTranslation } from 'react-i18next';
 
 export default function ListPost() {
     const { t } = useTranslation();
-
     const dispatch = useDispatch();
     const postListData = useSelector(state => state.PostReducer.posts);
+    const getType = (value) => {
+        switch (parseInt(value, 10)) {
+            case 1:
+                return "React JS"
+            case 2:
+                return "Utility"
+            default:
+                return "Other"
+        }
+    };
     const renderPostList = () => {
         return postListData.map((post, index) => {
             return <tr key={index}>
                 <td>{post.postId}</td>
                 <td>{post.postTitle}</td>
                 <td>{post.postTags}</td>
-                <td>{post.postType}</td>
+                <td>{getType(post.postType)}</td>
                 <td>{post.postDescription}</td>
                 <td>{post.postDate}</td>
                 <td>

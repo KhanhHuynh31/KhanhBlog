@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css"
-import picReact from '../../assets/images/libary/reactlogo.png';
+import picReact from '../../../assets/images/libary/reactlogo.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { LoginAction, RegisterAction } from '../../redux/actions/UserAction';
-import { LoginModalAction, RegisterModalAction } from '../../redux/actions/ModalAction';
+import { LoginAction, RegisterAction } from '../../../redux/actions/UserAction';
+import { LoginModalAction, RegisterModalAction } from '../../../redux/actions/ModalAction';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faUser} from '@fortawesome/free-regular-svg-icons'
