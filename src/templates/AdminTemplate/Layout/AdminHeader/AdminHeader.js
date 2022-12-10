@@ -10,7 +10,7 @@ export default function AdminHeader() {
   const [language, setLanguage] = useState("en");
 
   const handleChange = (value) => {
-    i18n.changeLanguage(value)
+    i18n.changeLanguage(value);
     setLanguage(value);
   }
   return (

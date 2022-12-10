@@ -33,13 +33,13 @@
         },
         {
             "postId": "4",
-            "postTitle": "Dispatch and Seletor data with Redux",
-            "postTags": "react, redux",
+            "postTitle": "Create Scroll Progress Bar ",
+            "postTags": "react, css, utilities",
             "postType":"1",
-            "postImage": "https://i.postimg.cc/02RH1my7/hooks-Redux.png",
+            "postImage": "https://i.postimg.cc/tJWCj8tk/progress.webp",
             "postDate": "12/5/2022",
-            "postContent":"",
-            "postDescription": "Discover popular convenient data hooks from Redux such as useSelector and useDispatch"
+            "postContent":"<h1>1. Setup scroll event</h1> <p>Create scroll state and set it equal percent scrolled</p> <div> <div><code>const [scroll, setScroll] = useState(0);</code></div> <div>&nbsp;</div> </div> <p><img src=\"https://i.postimg.cc/ZY7LB2mn/4-code.png\"></p> <p>After that set style in progress bar with transform scale to scale progress with equal scrolled progress</p> <div> <div><code>&lt;div id=\"progressBar\" style={{ transform: `scale(${scroll}, 1)` }} /&gt;</code></div> <div>&nbsp;</div> <h1>2. Styling</h1> <p>Fixed progress bar position and transform-origin top left to make it start from left to right</p> <p><img src=\"https://i.postimg.cc/Gt5PW8KG/4-css.png\"></p> <div>&nbsp;</div> </div>",
+            "postDescription": "Create a custom Scrolling progress bar that displays at the top to show page scrolling progress"
         },
         {
             "postId": "5",
@@ -58,7 +58,7 @@
             "postType":"2",
             "postImage": "https://i.postimg.cc/NFKm2yMY/i18next.png",
             "postDate": "12/5/2022",
-            "postContent":"",
+            "postContent":"<h1>1. Import Libary</h1> <p>Source: <a href=\"https://www.i18next.com/overview/getting-started\">https://www.i18next.com/overview/getting-started</a></p> <p><code>$ npm install i18next</code></p> <p><code>$ npm install i18next-http-backend</code></p> <div> <div> <div> <div><code>$ npm install i18next-browser-languagedetector</code></div> </div> </div> </div> <h1>2. Setup i18next</h1> <div> <div>Create i18n.js in src folder, next create locales folder contains languages text files and import './i18n' in index.js</div> </div> <p><img src=\"https://i.postimg.cc/YqMQmMh6/6-i18.png\"></p> <p><img src=\"https://i.postimg.cc/1zQBmTLX/6-locales.png\"></p> <h1>3. Using in project</h1> <h2>3.1 Setup button change language</h2> <div>&nbsp;</div> <div> <div> <table style=\"border-collapse: collapse; width: 100.47%; height: 176.4px;\" border=\"1\"><colgroup><col style=\"width: 100%;\"></colgroup> <tbody> <tr style=\"height: 176.4px;\"> <td style=\"height: 176.4px;\"> <div> <div>import { useState } from \"react\";</div> </div> <div> <div> <div> <div>import { useTranslation } from 'react-i18next';</div> <div>&nbsp;</div> </div> </div> <div> <div> <div>&nbsp;const { i18n } = useTranslation();</div> </div> &nbsp;const [language, setLanguage] = useState(\"en\");</div> <div> <div> <div>&nbsp;const handleChange = (value) =&gt; {</div> <div>&nbsp; &nbsp; i18n.changeLanguage(value);</div> <div>&nbsp; &nbsp; setLanguage(value);</div> <div>&nbsp;}</div> </div> </div> </div> </td> </tr> </tbody> </table> <p>&lt;a onClick={() =&gt; handleChange(\"vn\")&gt;VN&lt;/a&gt;</p> </div> </div> <h2>3.2 Display text in selected language</h2> <div> <div><code>import { useTranslation } from 'react-i18next';</code></div> <div>&nbsp;</div> </div> <div> <div><code>const { t } = useTranslation();</code></div> <div>&nbsp;</div> <div>Call t(\"[text key in langquage file]\")</div> </div> <div> <div><code>&lt;span&gt;{t(\"home\")}&lt;/span&gt;</code></div> </div>",
             "postDescription": "Make the website can display text in many different languages with i18next."
         }
     ]
