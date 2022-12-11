@@ -14,7 +14,7 @@
         {
             "postId": "2",
             "postTitle": "Create Arrow Button Back To Top",
-            "postTags": "react, utilities",
+            "postTags": "react, css, utilities",
             "postType":"2",
             "postImage": "https://i.postimg.cc/mk1nqB3T/backTop.png",
             "postDate": "12/5/2022",
@@ -35,7 +35,7 @@
             "postId": "4",
             "postTitle": "Create Scroll Progress Bar ",
             "postTags": "react, css, utilities",
-            "postType":"1",
+            "postType":"2",
             "postImage": "https://i.postimg.cc/tJWCj8tk/progress.webp",
             "postDate": "12/5/2022",
             "postContent":"<h1>1. Setup scroll event</h1> <p>Create scroll state and set it equal percent scrolled</p> <div> <div><code>const [scroll, setScroll] = useState(0);</code></div> <div>&nbsp;</div> </div> <p><img src=\"https://i.postimg.cc/ZY7LB2mn/4-code.png\"></p> <p>After that set style in progress bar with transform scale to scale progress with equal scrolled progress</p> <div> <div><code>&lt;div id=\"progressBar\" style={{ transform: `scale(${scroll}, 1)` }} /&gt;</code></div> <div>&nbsp;</div> <h1>2. Styling</h1> <p>Fixed progress bar position and transform-origin top left to make it start from left to right</p> <p><img src=\"https://i.postimg.cc/Gt5PW8KG/4-css.png\"></p> <div>&nbsp;</div> </div>",
@@ -44,7 +44,7 @@
         {
             "postId": "5",
             "postTitle": "React vs Angular",
-            "postTags": "react, react router",
+            "postTags": "react, angular",
             "postType":"1",
             "postImage": "https://i.postimg.cc/2jwKf9zd/Angular-vs-React.png",
             "postDate": "12/5/2022",
@@ -64,9 +64,9 @@
         {
             "postId": "7",
             "postTitle": "ReactJS and React Native",
-            "postTags": "react, react router",
+            "postTags": "react native, react",
             "postType":"1",
-            "postImage": "https://i.postimg.cc/qMnwRnnG/reactrouter6.png",
+            "postImage": "https://i.postimg.cc/nrrCtMv7/React-Native-vs-Reactjs.png",
             "postDate": "12/5/2022",
             "postContent":"<h1 id=\"intro\">1. Introduction: React vs React Native?</h1> <p>React and React Native are developed by Facebook and have gained a huge fan base in a short time. React is known as ReactJS, which is a JavaScript library to build single-page web applications.</p> <p>Besides, React Native is a React JS-based framework to design mobile apps. Moreover, with reusable components, you can develop native mobile applications.</p> <h1 id=\"react\">2. What&rsquo;s React?</h1> <p>React, or ReactJs is an open-source JavaScript library used to develop single-page web applications. It&rsquo;s one of the popular libraries to build UI (front-end) for web and mobile apps. It was developed and backed by Facebook in 2011 and has gained popularity since then.</p> <h1>3. What&rsquo;s React Native?</h1> <p><strong>React Native:</strong>&nbsp;A Native Mobile Development Library</p> <p>React Native is an open-source JavaScript-based framework developed by Facebook to meet its growing demand of mobile needs. React Native is a hybrid mobile app framework, allowing you to develop mobile applications with a single codebase. This JavaScript framework lets you build mobile apps that render natively across different platforms like iOS and Android.</p> <h1 id=\"difference\">4. Difference Between React and React Native</h1> <p>So what are the key technical differences between ReactJS and React Native?</p> <h3>*Framework</h3> <p>ReactJS is simply a JavaScript library, which enables the developer to create an engaging and high performing UI layer where as React Native is a framework for building cross-platform apps, for web applications, iOS and Android.</p> <h3>*Rendering</h3> <p>In ReactJS, virtual DOM is used to render browser code in Reactjs but in React Native, native APIs are used to render components in mobile.</p> <h3>*UI components</h3> <p>The apps developed with ReactJS render HTML in UI compared with React Native which uses JSX for rendering UI components, a syntax extension to JavaScript.</p> <h3>*Styling</h3> <p>CSS is used for creating styling in ReactJS but a stylesheet is used for styling in React Native.</p> <h3>*Animation</h3> <p>In ReactJS, animation is possible using CSS, whereas React Native doesn&rsquo;t use CSS but an animated API for inducing animation across different components of the React Native app.</p> <h1>5. Conclusion</h1> <p>Essentially, React (or ReactJS) is designed for web applications, while React Native is engineered for cross-platform mobile development.</p> <p>For a high performing, dynamic, and responsive UI for web interfaces, then ReactJS is the best option but for mobile apps with a truly native feel, then React Native is the framework of choice.</p>",
             "postDescription": "React and React Native are two popular technologies in the app development industry. Now we will unwrap the mystery behind them."
