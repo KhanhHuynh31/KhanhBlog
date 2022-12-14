@@ -1,10 +1,15 @@
+.list__content {
+    height: 680px;
+}
+
 .list__title {
-    padding: 12px;
+    padding: 10px;
+    margin-top: 0;
 }
 
 .table__template {
     border-collapse: collapse;
-    
+
 }
 
 .table__template th {
@@ -14,7 +19,7 @@
     background-color: #6c7ae0;
     padding: 10px;
     white-space: nowrap;
-    position: sticky; 
+    position: sticky;
     top: 0
 }
 
@@ -24,10 +29,8 @@
     border: 1px solid #e5e7ea;
     box-shadow: 0 0 40px 0 rgb(0 0 0 / 15%);
     margin: 10px;
-    height: 660px;
+    height: 565px;
     overflow: scroll;
-
-
 }
 
 .table__template tr:nth-child(even) {
@@ -38,7 +41,7 @@
 .table__template tr {
     color: #625f6e;
     transition: 0.2s;
-    
+
 }
 
 .table__template tr:hover {
@@ -54,4 +57,27 @@
 .button__action {
     font-size: 20px;
     cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #6c7ae0;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
 }

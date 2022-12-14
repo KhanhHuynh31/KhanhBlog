@@ -46,7 +46,7 @@ export default function PostsItem() {
     })
   }
   const renderPostsByType = () => {
-    return postListData.filter(post => post.postType === id).sort(sortTypePost()).map((item, index) => {
+    return postListData.filter(post => post.postType === id).slice(0, count + 1).sort(sortTypePost()).map((item, index) => {
       return <div className='posts__item' key={index}>
         <Link to={"/detail/" + item.postId}>
           <div className='item__picture'>
@@ -91,6 +91,21 @@ export default function PostsItem() {
       </button>
     }
   }
+  const renderMoreByType = () => {
+    if (postListData.filter(post => post.postType === id).length <= 4) {
+      return
+    }
+    else if (count > postListData.filter(post => post.postType === id).length) {
+      return <button className='button__more' onClick={() => setCount(3)}>
+        {t('hide posts')}
+      </button>
+    }
+    else {
+      return <button className='button__more' onClick={() => setCount(count + 4)}>
+        {t('more posts')}
+      </button>
+    }
+  }
   const renderSwitch = () => {
     if (id !== undefined) {
       return renderPostsByType();
@@ -106,7 +121,7 @@ export default function PostsItem() {
         {renderSwitch()}
       </div>
       <div className='items__more'>
-        {(id === undefined && searchText === undefined) && renderMore()}
+        {id === undefined ? renderMore() : renderMoreByType()}
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import "./ListPost.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +10,22 @@ import { useTranslation } from 'react-i18next';
 export default function ListPost() {
     const { t } = useTranslation();
     const dispatch = useDispatch();
+
     const postListData = useSelector(state => state.PostReducer.posts);
+    let maxPostList = postListData.length;
+    let page = parseInt(maxPostList / 5);
+    const [pre, setPre] = useState(0);
+
+    const renderPagination = (numberItem) => {
+        return Array(page + 1).fill(0).map((item, index) => {
+            return <div key={index}>
+                <a className={pre / 5 === index ? "active" : null}
+                    onClick={() => setPre(index * numberItem)}>
+                    {index + 1}
+                </a>
+            </div>
+        })
+    }
     const getType = (value) => {
         switch (parseInt(value, 10)) {
             case 1:
@@ -22,7 +37,7 @@ export default function ListPost() {
         }
     };
     const renderPostList = () => {
-        return postListData.map((post, index) => {
+        return postListData.slice(pre, pre + 5).map((post, index) => {
             return <tr key={index}>
                 <td>{post.postId}</td>
                 <td>{post.postTitle}</td>
@@ -42,7 +57,8 @@ export default function ListPost() {
         })
     }
     return (
-        <div>
+        <div className='list__content'>
+            <h2 className='list__title'>List Posts</h2>
             <div className='table__posts'>
                 <table className="table__template">
                     <thead>
@@ -60,6 +76,12 @@ export default function ListPost() {
                         {renderPostList()}
                     </tbody>
                 </table>
+
+            </div>
+            <div className="pagination">
+                <a onClick={() => { setPre(0) }}>&laquo;</a>
+                {renderPagination(5)}
+                <a onClick={() => { setPre(page * 5) }}>&raquo;</a>
             </div>
         </div>
     )
