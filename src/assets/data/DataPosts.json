@@ -1,5 +1,17 @@
 {
     "postEdit": {},
+    "postSearch": [
+        {
+            "postId": "",
+            "postTitle": "",
+            "postTags": "",
+            "postType": "",
+            "postImage": "",
+            "postDate": "",
+            "postContent": "",
+            "postDescription": ""
+        }
+    ],
     "posts": [
         {
             "postId": "1",

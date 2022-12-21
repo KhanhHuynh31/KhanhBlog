@@ -39,7 +39,18 @@ export const PostReducer = (state = PostData, action) => {
 
         }
         case POST_SEARCH: {
-
+            let postListSearch = [...state.posts];
+            let listSearch = postListSearch.filter(post => Object.values(post).some(val => typeof val === "string" && val.match(action.searchText)));
+            if (listSearch.length >= 1) {
+                state.postSearch = listSearch;
+            }
+            else {
+                state.postSearch = state.posts;
+                toast.error("Not found", {
+                    duration: 700,
+                    id: 'clipboard',
+                  })
+            }
             return { ...state }
 
         }

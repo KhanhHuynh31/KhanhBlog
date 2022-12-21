@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import "./ListPost.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons'
-import { DeletePostAction, GetPostAction } from "../../../redux/actions/PostAction"
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import toast from 'react-hot-toast';
+import { DeletePostAction, GetPostAction, SearchPostAction } from "../../../redux/actions/PostAction"
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { CSVLink } from "react-csv";
 
 export default function ListPost() {
     const { t } = useTranslation();
     const dispatch = useDispatch();
+    const postSearchData = useSelector(state => state.PostReducer.postSearch);
 
-    const postListData = useSelector(state => state.PostReducer.posts);
-    let maxPostList = postListData.length;
+    let maxPostList = postSearchData.length;
     let page = parseInt(maxPostList / 5);
     const [pre, setPre] = useState(0);
 
@@ -36,8 +39,23 @@ export default function ListPost() {
                 return "Other"
         }
     };
+    const [searchText, setSearchText] = useState()
+
+    useEffect(() => {
+        (async () => {
+            dispatch(SearchPostAction(searchText))
+        })()
+    }, [searchText]);
+    const handleSubmitLogin = (event) => {
+        event.preventDefault();
+      }
+    const getSearchText = (event) => {
+        const value = event.target.value;
+        setSearchText(value.trim());
+    }
+
     const renderPostList = () => {
-        return postListData.slice(pre, pre + 5).map((post, index) => {
+        return postSearchData.slice(pre, pre + 5).map((post, index) => {
             return <tr key={index}>
                 <td>{post.postId}</td>
                 <td>{post.postTitle}</td>
@@ -58,7 +76,20 @@ export default function ListPost() {
     }
     return (
         <div className='list__content'>
-            <h2 className='list__title'>List Posts</h2>
+            <div className='list__header'>
+                <span className="admin__search">
+                    <form onSubmit={handleSubmitLogin}>
+                        <input type="text" className='admin__search__input' placeholder='Search' onChange={getSearchText} />
+                    </form>
+                </span>
+                <CSVLink
+                    data={postSearchData}
+                    filename={"ListPosts.csv"}
+                    className="export__button"
+                >
+                    Export
+                </CSVLink>
+            </div>
             <div className='table__posts'>
                 <table className="table__template">
                     <thead>

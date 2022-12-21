@@ -7,6 +7,61 @@
     margin-top: 0;
 }
 
+.list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.export__button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.4s;
+    background: linear-gradient(118deg, #04AA6D, #059862);
+    color: #fff;
+    border: 1px solid #625f6e;
+    cursor: pointer;
+}
+
+
+.export__button:hover {
+    background: none;
+    box-shadow: 0 0 10px 1px #04AA6D;
+    color: #625f6e;
+
+}
+
+.admin__search__input {
+    border: 1px solid #6c7ae0;
+    width: 200px;
+    padding: 5px;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+    margin-right: 5px;
+}
+
+.admin__search__button:hover {
+    background: none;
+    box-shadow: 0 0 10px 1px #6c7ae0;
+    color: #625f6e;
+}
+
+.admin__search__button {
+    padding: 7px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.4s;
+    background: #6c7ae0;
+    color: #fff;
+    border: 1px solid #625f6e;
+    cursor: pointer;
+}
+
 .table__template {
     border-collapse: collapse;
 
