@@ -80,7 +80,8 @@ export default function Login() {
                             <h2 className='login__title'>{t("member login")}</h2>
                             <div className='modal__form'>
                                 <FontAwesomeIcon icon={faEnvelope} className="modal__icon" />
-                                <input type='text' className='modal__input' name='userEmail' value={loginFormik.values.userEmail}
+
+                                <input type='text' className={`modal__input ${loginFormik.touched.userEmail && loginFormik.errors.userEmail ? "error__input" : ""}`} name='userEmail' value={loginFormik.values.userEmail}
                                     onChange={loginFormik.handleChange} onBlur={loginFormik.handleBlur} placeholder='Email'
                                 ></input>
                                 {loginFormik.touched.userEmail && loginFormik.errors.userEmail && (
@@ -89,7 +90,7 @@ export default function Login() {
                             </div>
                             <div className='modal__form'>
                                 <FontAwesomeIcon icon={faLock} className="modal__icon" />
-                                <input type='password' className='modal__input' name='userPassword' value={loginFormik.values.userPassword}
+                                <input type='password' className={`modal__input ${loginFormik.touched.userPassword && loginFormik.errors.userPassword ? "error__input" : ""}`} name='userPassword' value={loginFormik.values.userPassword}
                                     onChange={loginFormik.handleChange} onBlur={loginFormik.handleBlur} placeholder='password'></input>
                                 {loginFormik.touched.userPassword && loginFormik.errors.userPassword && (
                                     <p className="error__msg"> *{loginFormik.errors.userPassword} </p>
@@ -106,7 +107,7 @@ export default function Login() {
                         </form>
                     </div>
                 </div>
-            </div>
+            </div >
             <div id="popup__register" className={regesterStatus ? ("modal__box modal__active") : ("modal__box")}>
                 <div className="modal__popup">
                     <a className="modal__close" onClick={() => { dispatch(RegisterModalAction(false)) }}>×</a>
@@ -118,28 +119,28 @@ export default function Login() {
                             <h2 className='login__title'>{t("member register")}</h2>
                             <div className='modal__form'>
                                 <FontAwesomeIcon icon={faEnvelope} className="modal__icon" />
-                                <input type='text' className='modal__input' name='userEmail' placeholder='Email' onChange={registerFormik.handleChange}></input>
+                                <input type='text' className={`modal__input ${registerFormik.touched.userEmail && registerFormik.errors.userEmail ? "error__input" : ""}`} name='userEmail' placeholder='Email' onChange={registerFormik.handleChange}></input>
                                 {registerFormik.touched.userEmail && registerFormik.errors.userEmail && (
                                     <p className="error__msg"> *{registerFormik.errors.userEmail} </p>
                                 )}
                             </div>
                             <div className='modal__form'>
                                 <FontAwesomeIcon icon={faUser} className="modal__icon" />
-                                <input type='text' className='modal__input' name='userName' placeholder='Name' onChange={registerFormik.handleChange}></input>
+                                <input type='text' className={`modal__input ${registerFormik.touched.userName && registerFormik.errors.userName ? "error__input" : ""}`} name='userName' placeholder='Name' onChange={registerFormik.handleChange}></input>
                                 {registerFormik.touched.userEmail && registerFormik.errors.userName && (
                                     <p className="error__msg"> *{registerFormik.errors.userName} </p>
                                 )}
                             </div>
                             <div className='modal__form'>
                                 <FontAwesomeIcon icon={faLock} className="modal__icon" />
-                                <input type='password' className='modal__input' name='userPassword' placeholder='password' onChange={registerFormik.handleChange}></input>
+                                <input type='password' className={`modal__input ${registerFormik.touched.userPassword && registerFormik.errors.userPassword ? "error__input" : ""}`} name='userPassword' placeholder='password' onChange={registerFormik.handleChange}></input>
                                 {registerFormik.touched.userEmail && registerFormik.errors.userPassword && (
                                     <p className="error__msg"> *{registerFormik.errors.userPassword} </p>
                                 )}
                             </div>
                             <div className='modal__form'>
                                 <FontAwesomeIcon icon={faLock} className="modal__icon" />
-                                <input type='password' className='modal__input' name='userRePassword' placeholder='repeat password' onChange={registerFormik.handleChange}></input>
+                                <input type='password' className={`modal__input ${registerFormik.touched.userRePassword && registerFormik.errors.userRePassword ? "error__input" : ""}`} name='userRePassword' placeholder='repeat password' onChange={registerFormik.handleChange}></input>
                                 {registerFormik.touched.userEmail && registerFormik.errors.userRePassword && (
                                     <p className="error__msg"> *{registerFormik.errors.userRePassword} </p>
                                 )}
@@ -150,7 +151,7 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

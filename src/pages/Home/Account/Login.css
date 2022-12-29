@@ -138,11 +138,17 @@
     top: 10px;
     left: 10px;
 }
-.error__msg{
-    color: red;
+
+.error__msg {
+    color: #ed4337;
     width: 100%;
     margin-top: 0;
 }
+
+.error__input {
+    box-shadow: 0 0 10px 1px #ed4337;
+}
+
 @media screen and (max-width: 980px) {
 
 
@@ -161,23 +167,29 @@
     .content__picture {
         display: none;
     }
+
     .modal__popup {
         width: 75%;
     }
+
     .login__form {
         padding-left: 20px;
     }
+
     .login__form input {
         max-width: unset;
 
     }
+
     .login__button {
         max-width: unset;
     }
+
     .login__title {
         max-width: unset;
     }
-    .login__create{
+
+    .login__create {
         text-align: center;
         margin-top: 40px;
     }
