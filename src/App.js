@@ -19,10 +19,12 @@ import ListPost from './pages/Admin/ListPost/ListPost';
 import { Toaster } from 'react-hot-toast';
 import Search from './pages/Home/Search/Search';
 import About from './pages/Home/About/About';
+import Loading from './components/Loading/Loading';
 
 function App() {
   return (
     <BrowserRouter>
+      <Loading />
       <Toaster />
       <Routes>
         <Route path="*" element={<PageNotFound />} />

@@ -1,16 +1,15 @@
 import React, { Fragment, useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { useSelector } from "react-redux"
 import AdminMenu from './Layout/AdminMenu/AdminMenu'
 import AdminHeader from './Layout/AdminHeader/AdminHeader'
 import "./AdminTemplate.css"
-import { USER_LOGIN } from "../../redux/types/UserType"
+import { LOGIN_SUCCESS } from "../../redux/types/UserType"
 
 export default function AdminTemplate() {
-    const userLogin = useSelector(state => state.UserReducer.loginUser);
-    let navigate = useNavigate();
+    const navigate = useNavigate();
+    const userLogin = JSON.parse(localStorage.getItem(LOGIN_SUCCESS));
     useEffect(() => {
-        if (!localStorage.getItem(USER_LOGIN) || userLogin.userRole !== "1") {
+        if (!localStorage.getItem(LOGIN_SUCCESS) || !userLogin.isAdmin) {
             alert('Bạn không có quyền truy cập vào trang này !')
             navigate(-1);
         };

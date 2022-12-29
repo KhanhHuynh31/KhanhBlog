@@ -3,7 +3,7 @@ import "./Header.css"
 import { useTranslation } from 'react-i18next';
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { USER_LOGOUT, USER_LOGIN } from '../../../../redux/types/UserType'
+import { LOGOUT_SUCCESS, LOGIN_SUCCESS } from '../../../../redux/types/UserType'
 import { LoginModalAction, SearchModalAction } from '../../../../redux/actions/ModalAction';
 import toast from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,14 +15,14 @@ export default function Header() {
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState("en");
   const navigate = useNavigate();
-  const userLoginData = useSelector(state => state.UserReducer.loginUser);
+  const userLoginData = useSelector(state => state.UserReducer.login.currentUser);
   const handleChange = (value) => {
     i18n.changeLanguage(value)
     setLanguage(value);
   }
   const [login, setLogin] = useState();
   useEffect(() => {
-    if (!localStorage.getItem(USER_LOGIN)) {
+    if (!localStorage.getItem(LOGIN_SUCCESS)) {
       setLogin(false)
     }
     else {
@@ -105,10 +105,10 @@ export default function Header() {
             <FontAwesomeIcon icon={faUser} className="user__icon" />
             <span className="user__name">{userLoginData.userName}</span>
             <div className="user__dropdown">
-              <a className="menu__link button__modal" onClick={() => {
-                const action = { type: USER_LOGOUT }
+              <button className="menu__link button__modal" onClick={() => {
+                const action = { type: LOGOUT_SUCCESS }
                 dispatch(action);
-              }}>{t('log out')}</a>
+              }}>{t('log out')}</button>
             </div>
           </div>
         }
@@ -130,7 +130,7 @@ export default function Header() {
           }
           }>{t('search')}</a>
           {login && <a className={({ isActive }) => "menu__link" + (isActive ? " active" : "")} onClick={() => {
-            const action = { type: USER_LOGOUT }
+            const action = { type: LOGOUT_SUCCESS }
             dispatch(action);
           }}>{t('log out')}</a>
           }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Login.css"
 import picReact from '../../../assets/images/libary/reactlogo.png';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,24 +6,15 @@ import { LoginAction, RegisterAction } from '../../../redux/actions/UserAction';
 import { LoginModalAction, RegisterModalAction } from '../../../redux/actions/ModalAction';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faUser} from '@fortawesome/free-regular-svg-icons'
-import { faLock} from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons'
+import { faLock } from '@fortawesome/free-solid-svg-icons'
 
 export default function Login() {
     const { t } = useTranslation();
-    const userLoginData = useSelector(state => state.UserReducer.loginUser);
     const loginStatus = useSelector(state => state.ModalReducer.loginModal);
     const regesterStatus = useSelector(state => state.ModalReducer.regesterModal);
 
     const dispatch = useDispatch();
-    useEffect(() => {
-        (async () => {
-            if (userLoginData !== "") {
-                dispatch(LoginModalAction(false))
-            }
-        })()
-    }, [userLoginData]);
-
     const [data, setData] = useState({
         userEmail: '',
         userName: '',
