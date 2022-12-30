@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, REGISTER_SUCCESS, LOGOUT_SUCCESS } from '../types/UserType';
+import { LOGIN_SUCCESS, REGISTER_SUCCESS } from '../types/UserType';
 import { DOMAIN } from '../../util/settings/config';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -19,7 +19,7 @@ export const LoginAction = (userData) => {
             toast.success("Login success");
         } catch (err) {
             dispatch(LoadingAction(false));
-            toast.error("Login failed")
+            toast.error(err.response.data)
         }
     }
 }
@@ -36,22 +36,7 @@ export const RegisterAction = (userData) => {
             toast.success("Register success");
         } catch (err) {
             dispatch(LoadingAction(false));
-            toast.error("Register failed");
+            toast.error(err.response.data)
         }
     }
 }
-// export const LogoutAction = (id, accessToken, axiosJWT) => {
-//     return async (dispatch) => {
-//         try {
-//             await axiosJWT.post(`${DOMAIN}/v1/auth/logout`, id, {
-//                 headers: { token: `Bearer ${accessToken}` },
-//             });
-//             dispatch({
-//                 type: LOGOUT_SUCCESS
-//             })
-//             toast.success("Log out success")
-//         } catch (err) {
-//             toast.error("Log out  failed")
-//         }
-//     }
-// }
